@@ -28,6 +28,8 @@ def configure_sidebar():
     local_css("static/style.css")
 
     st.sidebar.image(image, use_column_width=True)
+    path_to_resume = "static/resume/Resume_Ankit.pdf"
+    st.sidebar.markdown(f"Download [Resume](./{path_to_resume})")
     st.sidebar.subheader("Contact:")
     st.sidebar.markdown("Phone: +91-9958631596")
     st.sidebar.markdown("Email: [a.baliyan008@gmail.com](mailto:a.baliyan008@gmail.com)")
