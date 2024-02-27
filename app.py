@@ -29,7 +29,14 @@ def configure_sidebar():
 
     st.sidebar.image(image, use_column_width=True)
     path_to_resume = "static/resume/Resume_Ankit.pdf"
-    st.sidebar.markdown(f"Download [Resume](./{path_to_resume})")
+    with open(path_to_resume, "rb") as file:
+        pdf_bytes = file.read()
+    st.sidebar.download_button(
+        label="Download Resume",
+        data=pdf_bytes,
+        file_name="Resume_Ankit.pdf",
+        mime="application/pdf"
+    )
     st.sidebar.subheader("Contact:")
     st.sidebar.markdown("Phone: +91-9958631596")
     st.sidebar.markdown("Email: [a.baliyan008@gmail.com](mailto:a.baliyan008@gmail.com)")
