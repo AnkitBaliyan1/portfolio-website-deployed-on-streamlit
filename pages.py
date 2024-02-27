@@ -268,7 +268,11 @@ def contactme():
                 st.error("Please provide a valid Mobile Number.")
                 st.error("Hint: It should be all numeric and atleast 10 numbers")
             else:
-                st.success("Thanks for reaching out! I'll get back to you as soon as possible.")
-                udpate_database(name, phone, email, query)
+                try:
+                    udpate_database(name, phone, email, query)
+                    st.success("Thanks for reaching out! I'll get back to you as soon as possible.")
+                except Exception as e:
+                    st.error("Since I'm using all free resources, it may encounter error sometimes. Your query could not be submitted, do you mind trying again")
+                
                 
                 
